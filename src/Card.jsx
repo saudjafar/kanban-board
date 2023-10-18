@@ -23,7 +23,6 @@ const Card = ({ groupingOption, orderingOption }) => {
 
         const apiUrl = 'https://api.quicksell.co/v1/internal/frontend-assignment';
 
-        // Function to fetch data from the API
         async function fetchData() {
             try {
                 const response = await fetch(apiUrl);
@@ -48,16 +47,34 @@ const Card = ({ groupingOption, orderingOption }) => {
                 <div className="card-group" key={groupKey}>
                     <div className="card-header">
                         <div className='card-title'>
-                            <img src={`${groupingOption === "name" ? User : groupKeyImages[groupKey]}`}
-                                width={24} height={24}
-                                style={{ paddingRight: '0.5rem' }} />
+                            <img
+                                alt='User'
+                                src={`${groupingOption === "name" ? User : groupKeyImages[groupKey]}`}
+                                width={24}
+                                height={24}
+                                style={{ paddingRight: '0.5rem' }}
+                            />
                             {groupKey}
-                            <span className='card-count'>{sortedData[groupKey].length}</span>
+                            <span className='card-count'>
+                                {sortedData[groupKey].length}
+                            </span>
                         </div>
 
                         <div>
-                            <img src={Plus} width={28} height={28} style={{ paddingRight: '0.2rem' }} />
-                            <img src={Dots} width={28} height={28} style={{ paddingLeft: '0.2rem' }} />
+                            <img
+                                alt='plus'
+                                src={Plus}
+                                width={28}
+                                height={28}
+                                style={{ paddingRight: '0.2rem' }}
+                            />
+                            <img
+                                alt='options'
+                                src={Dots}
+                                width={28}
+                                height={28}
+                                style={{ paddingLeft: '0.2rem' }}
+                            />
                         </div>
 
                     </div>
@@ -67,16 +84,34 @@ const Card = ({ groupingOption, orderingOption }) => {
                                 <div className='id-container'>
                                     <p className='id'>{ticket.id}</p>
                                     {groupingOption !== 'name' &&
-                                        <img className='user-icon' src={User} width={24} height={24} />
+                                        <img
+                                            className='user-icon'
+                                            alt='User'
+                                            src={User}
+                                            width={24}
+                                            height={24}
+                                        />
                                     }
                                 </div>
                                 <p className='title'>{ticket.title}</p>
                                 <div className='tags-container'>
                                     {groupingOption !== 'priority' &&
-                                        <img className='tag-img' src={(groupKeyImages[priorityMap[ticket.priority]])} width={16} height={16} />
+                                        <img
+                                            className='tag-img'
+                                            src={(groupKeyImages[priorityMap[ticket.priority]])}
+                                            width={16}
+                                            height={16}
+                                            alt='priority'
+                                        />
                                     }
                                     {groupingOption !== 'status' &&
-                                        <img className='tag-img' src={(groupKeyImages[ticket.status])} width={16} height={16} />
+                                        <img
+                                            className='tag-img'
+                                            src={(groupKeyImages[ticket.status])}
+                                            width={16}
+                                            height={16}
+                                            alt='status'
+                                        />
                                     }
                                     <p className='tag'>
                                         <span className='tag-dot'>⬤</span>

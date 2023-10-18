@@ -5,8 +5,8 @@ import DownArrow from './assets/arrow-down.svg';
 import FilterIcon from './assets/filter2.svg';
 
 function App() {
-  const [groupingOption, setGroupingOption] = useState('name'); // Default grouping option
-  const [orderingOption, setOrderingOption] = useState('title'); // Default ordering option
+  const [groupingOption, setGroupingOption] = useState('name');
+  const [orderingOption, setOrderingOption] = useState('title');
   const savedGroupingOption = localStorage.getItem('groupingOption');
   const savedOrderingOption = localStorage.getItem('orderingOption');
 
@@ -38,7 +38,6 @@ function App() {
     setDropdownVisible(!isDropdownVisible);
   };
 
-  // Close the dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -59,9 +58,21 @@ function App() {
       <div className="dropdown" >
         <div className="display-container" ref={dropdownRef}>
           <div className="display-header" onClick={toggleDropdown}>
-            <img src={FilterIcon} width={16} height={16} style={{ paddingRight: '0.5rem', paddingTop: '0.1rem' }} />
+            <img
+              src={FilterIcon}
+              alt='filter'
+              width={16}
+              height={16}
+              style={{ paddingRight: '0.5rem', paddingTop: '0.1rem' }}
+            />
             <span>Display</span>
-            <img src={DownArrow} width={16} height={16} style={{ paddingLeft: '0.5rem' }} />
+            <img
+              src={DownArrow}
+              alt='arrow-down'
+              width={16}
+              height={16}
+              style={{ paddingLeft: '0.5rem' }}
+            />
           </div>
           {isDropdownVisible && (
             <div className="display-content">
