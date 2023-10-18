@@ -6,7 +6,7 @@ A simple Kanban board web app built using React for organizing tasks or tickets 
 
 **1. Clone the Repository:**
 ```bash
-git clone https://github.com/your-username/react-kanban-board.git
+git clone https://github.com/your-username/kanban-board.git
 ```
 
 **2. Install Dependencies:**
