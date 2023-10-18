@@ -1,38 +1,204 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f5f8;
+
+}
+
 .App {
-  text-align: center;
+  min-width: fit-content;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.dropdown {
+  & {
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    height: 5rem;
+    background-color: white;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  .display-container {
+    & {
+      position: relative;
+      display: inline-block;
+      top: 1.25rem;
+      left: 2.75rem;
+    }
 
-.App-link {
-  color: #61dafb;
-}
+    .display-header {
+      & {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-color: white;
+        padding: 0.3rem;
+        border: 1.5px solid #ccc;
+        border-radius: 6px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+    }
+
+    .display-content {
+      & {
+        min-width: fit-content;
+        display: block;
+        position: absolute;
+        padding: 0.5rem 1.5rem;
+        top: 140%;
+        left: 0;
+        background-color: #f9fafb;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        /* Adjust the z-index as needed to be above other elements */
+      }
+
+      .sub-dropdown {
+        & {
+          display: flex;
+          justify-content: space-between;
+          padding: 0.75rem;
+        }
+
+        .select-title {
+          padding-right: 5rem;
+          font-weight: 600;
+          color: #808080;
+        }
+
+
+        .select-menu {
+          min-width: 6rem;
+          padding: 0.15rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+      }
+    }
   }
-  to {
-    transform: rotate(360deg);
+
+}
+
+.main {
+  & {}
+
+  .kanban-board {
+    & {
+      display: flex;
+      justify-content: space-around;
+      padding: 1.25rem;
+      /* overflow-x: auto; */
+    }
+
+    .card-group {
+      & {
+        margin: 1rem;
+        min-width: 31.875rem;
+      }
+
+      .card-header {
+        & {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.5rem 0;
+          margin: 0.75rem;
+          font-weight: 700;
+          font-size: 1.17rem;
+        }
+
+        .card-title {
+          display: flex;
+          align-items: center;
+        }
+
+        .card-count {
+          padding-left: 1rem;
+          font-weight: 500;
+          color: gray;
+        }
+      }
+
+      .card-container {
+        & {}
+
+        .card {
+          & {
+            background-color: white;
+            padding: 1rem;
+            margin: 0.75rem;
+            border: 1px solid #E7E8EC;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+          }
+
+          .id-container {
+            & {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+
+            .id {
+              color: gray;
+              font-weight: 500;
+              margin: 0;
+              padding: 0.25rem 0;
+            }
+          }
+
+
+          .title {
+            font-size: 1.15rem;
+            padding: 0.25rem 0;
+            margin: 0;
+            width: 85%;
+            font-weight: 600;
+          }
+
+          .tags-container {
+            & {
+              display: flex;
+              align-items: center;
+            }
+
+            .tag-img {
+              padding: 0.25rem;
+              margin: 0.25rem;
+              margin-top: 0.5rem;
+              border: 1px solid #E7E8EC;
+              border-radius: 6px;
+            }
+
+            .tag {
+              & {
+                padding: 0.25rem;
+                margin: 0.25rem;
+                margin-top: 0.5rem;
+                font-size: 0.75rem;
+                max-width: fit-content;
+                border: 1px solid #E7E8EC;
+                border-radius: 6px;
+                color: gray;
+                font-weight: 500;
+                text-transform: capitalize;
+              }
+
+
+
+              .tag-dot {
+                padding-right: 0.25rem;
+                color: gray;
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
   }
+
 }
